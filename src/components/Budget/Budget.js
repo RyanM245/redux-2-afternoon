@@ -17,6 +17,8 @@ class Budget extends Component {
 componentDidMount(){
   this.props.requestUserData()
   this.props.requestBudgetData()
+  this.props.addPurchase()
+  this.props.removePurchase()
 }
 
   render() {

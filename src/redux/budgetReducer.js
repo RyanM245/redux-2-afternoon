@@ -12,7 +12,7 @@ const REMOVE_PURCHASE = "REMOVE_PURCHASE";
 
 export function removePurchase(id) {
   let data = axios
-    .delete("/api/budget-data/purchase/:id")
+    .delete(`/api/budget-data/purchase/${id}`)
     .then((res) => res.data);
   return {
     type: REMOVE_PURCHASE,
@@ -51,7 +51,7 @@ export default function budgetReducer(state = initialState, action) {
     case REMOVE_PURCHASE + "_PENDING":
       return { ...state, loading: true };
     case REMOVE_PURCHASE + "_FULFILLED":
-      return { ...state, loading: false, purchases: action.payload };
+      return { ...state,purchases: action.payload , loading: false};
 
     default:
       return state;
